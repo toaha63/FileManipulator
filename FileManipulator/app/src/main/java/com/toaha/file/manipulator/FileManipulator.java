@@ -7,9 +7,9 @@ package com.toaha.file.manipulator;
  @ Library written on about 10PM, 13/01/2025 
  @ Written & Tested on AIDE , Java N-IDE & OpenJDK-21 in Termux in Android 11 Operating System!
 
- @@Java has too many classes and trick to manipulate file, fo this, programmers often get 😕 . To solve this problem, I write this library.
+ @@Java has too many classes and trick to manipulate file, fo this, programmers often get ðŸ˜• . To solve this problem, I write this library.
 
- @Use library "File Manipulator" Freely and you can edit functions, see or modify source code. But i have a request, if you use this on any project, please give me credit ?��. I have no computer & I made this library in a big struggle.
+ @Use library "File Manipulator" Freely and you can edit functions, see or modify source code. But i have a request, if you use this on any project, please give me credit ?ï¿½ï¿½. I have no computer & I made this library in a big struggle.
 
  @Contact:
 
@@ -183,13 +183,15 @@ public class FileManipulator
         write(data.toString());
     }
 
-    public void write(HashMap<String, String> data)
-	{
-        for (String key : data.keySet())
-		{
-            write(key + ": " + data.get(key));
+    public <K, V> void write(HashMap<K, V> data)
+    {
+        for(K key : data.keySet())
+        {
+            V value = data.get(key);
+            write(key.toString() + ": " + value.toString());
         }
     }
+
 
     
     public void write(StringJoiner data)
@@ -513,7 +515,7 @@ public class FileManipulator
     }
 
     public long getSize() throws Exception
-	{
+    {
         return getSize(currentFile);
     }
 
