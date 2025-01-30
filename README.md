@@ -11,15 +11,17 @@ Most easy, make object and call functions!
 Example 1:
 
 ```Java
+
 import com.toaha.file.manipulator.FileManipulator;
 import java.lang.*;
 
 public class Main
 {
-    public static void main(String [] args)
+    public static void main(String [] args) throws Exception
     {
          FileManipulator fm = new FileManipulator("test.txt" , "w");//write mode
-         fm.write("Hello, World 🌍");
+         fm.write("Hello, World!");
+
          
          String a = new String(new FileManipulator("test.txt", "r").read());
          System.out.println(a); //read file by  function read()
